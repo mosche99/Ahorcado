@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="app">
+        <h1 class="title">AHORCADO</h1>
+        <h2 id="word"></h2>
+        <h3 id="letters"></h3>
+        <input type="text" id="guess" maxlength="1" class="hide">
+        <button id="intentar" class="hide">Intentar</button>
+        <button id="start" class="play">Jugar</button>
+        <p id="trys" class="trys"></p>
+        <div id="lose" class="hide">
+            <h2>Perdiste</h2>
+            <h3 id="cartel-derrota" class="hide">La palabra era <span id="palabra-derrota"></span></h3>
+        </div>
+        <div id="win" class="hide">
+            <h2>Ganaste</h2>
+            <h3 id="cartel-victoria" class="hide">La palabra era <span id="palabra-victoria"></span></h3>
+        </div>
+        <button id="restart" class="hide">Jugar De Nuevo</button>
+
+    </div>
+</body>
+</html>
