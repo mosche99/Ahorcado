@@ -146,35 +146,26 @@ const startGame = () => {
     startGameRender();
 }
 
-//Cuando hacemos click en el botón $start, iniciamos una nueva partida
-$start.addEventListener('click', e => {
-    startGame();
-    e.preventDefault();
-})
+//Manejo de Eventos en el DOM
+document.addEventListener('click', e => {
+    if (e.target === $start) {
+        startGame();
+    } else if (e.target === $intentar ) {
+        guessTheWord();
+
+        //Ejecutarse si Perdiste
+        if (trys === 0) {
+        renderLose();
     
-//Ejecutamos la lógica principal del juego
-$intentar.addEventListener('click', e =>{
-    guessTheWord();
-
-    //Ejecutarse si Perdiste
-    if (trys === 0) {
-    renderLose();
-
-    }
-
-    //Ejecutarse si Ganaste
-    if (hidden.join('') === word.join('')) {
-    renderWin();
-    }
+        }
     
-
-    e.preventDefault();
-})
-
-
-// Al presionar el botón restart, iniciamos una nueva partida
-$restart.addEventListener('click', e => {
-    startGame();
+        //Ejecutarse si Ganaste
+        if (hidden.join('') === word.join('')) {
+        renderWin();
+        }
+    } else if (e.target === $restart) {
+        startGame();
+    }
     e.preventDefault();
 });
 
